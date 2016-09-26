@@ -35,6 +35,14 @@ $loptions2= array(
 	'3' => '34',
 	'4' => '36');
 
+//list of comments
+$lcomments= array(
+	'1' => 'Inmediato',
+	'2' => 'De ser posible',
+	'3' => 'A prever',
+	'4' => 'Observaciones'
+	);
+
 //list of matrices info
 $list = array(
 	'1' => array(

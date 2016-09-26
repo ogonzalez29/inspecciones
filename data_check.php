@@ -1,11 +1,13 @@
 <?php
 //// define variables array and set to empty values
 global $dateErr;
-global $orderErr;
 global $nameErr;
 global $last_nameErr;
 global $nameErr1;
 global $last_nameErr1;
+global $idErr;
+global $phoneErr;
+global $emailErr;
 global $makeErr;
 global $lineErr;
 global $modelErr;
@@ -18,20 +20,24 @@ global $matrix4Err;
 global $matrix5Err;
 global $matrix6Err;
 global $matrix7Err;
-global $nextMileageErr;
+global $matrix8Err;
+global $matrix9Err;
+global $matrix10Err;
 global $signatureErr;
 global $comment1Err;
 global $comment2Err;
 global $comment3Err;
 global $comment4Err;
-global $searchErr;
+global $search3Err3;
 
 $errors = array('$dateErr' => "",
-                '$orderErr' => "", 
                 '$nameErr' => "", 
                 '$last_nameErr' => "", 
                 '$nameErr1' => "", 
                 '$last_nameErr1' => "",
+                '$idErr' => "",
+                '$phoneErr' => "",
+                '$emailErr' => "",
                 '$makeErr' => "",
                 '$lineErr' => "", 
                 '$modelErr' => "", 
@@ -44,7 +50,9 @@ $errors = array('$dateErr' => "",
                 '$matrix5Err' => "",
                 '$matrix6Err' => "",
                 '$matrix7Err' => "",
-                '$nextMileageErr' =>"",
+                '$matrix8Err' => "",
+                '$matrix9Err' => "",
+                '$matrix10Err' => "",
                 '$signatureErr' =>"",
                 '$comment1Err' =>"",
                 '$comment2Err' =>"",
@@ -52,11 +60,11 @@ $errors = array('$dateErr' => "",
                 'comment4Err'=>"");
 
 // $orderErr = $nameErr = $last_nameErr = $emailErr = $genderErr = $websiteErr = "";
-$month = $day = $year = $firstname = $lastname = $make = $model = $license = $mileage = $ordernumber = $firstname1 = $lastname1 =  $comment1 = $comment2 = $comment3 = $comment4 = $nextMileage= $signature="";
+$month = $day = $year = $firstname = $lastname = $idnumber = $phone = $email = $make = $model = $license = $mileage = $firstname1 = $lastname1 =  $comment1 = $comment2 = $comment3 = $comment4 = $signature="";
 
 //search input text field and error in search.php file
-$search ="";
-$searchErr = "";
+$search3 ="";
+$search3Err3 = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if(empty($_POST["month"]) || empty($_POST["day"]) || empty($_POST["year"])){
@@ -64,22 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   $errors = array($dateErr);
-
-  if (empty($_POST["ordernumber"])) {
-    $orderErr = "* Orden de reparación requerida";
-  } else {
-    $ordernumber = test_input($_POST["ordernumber"]);
-    // check if order only contains numbers and no whitespaces
-    if (!preg_match("/^[0-9 ]*$/",$ordernumber)) {
-      $orderErr = "* Solo números sin espacios permitidos"; 
-    }
-    // check if order value already exists in database to avoid duplicate
-    else {
-      require_once('duplicate_query.php');
-      }
-    }
-
-  array_push($errors, $orderErr);
 
   if (empty($_POST["firstname1"])) {
     $nameErr1 = "* Nombre requerido";
@@ -128,6 +120,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   array_push($errors, $last_nameErr);
+
+  if (empty($_POST["idnumber"])) {
+    $idErr = "* Cédula requerida";
+  } else {
+    $idnumber = test_input($_POST["idnumber"]);
+    // check if order only contains numbers and no whitespaces
+    if (!preg_match("/^[0-9]*$/",$idnumber)) {
+      $idErr = "* Solo números permitidos sin espacios, comas ni puntos"; 
+    }
+  }
+
+  array_push($errors, $idErr);
+
+  if (empty($_POST["phone"])) {
+    $phoneErr = "* Teléfono requerido";
+  } else {
+    $phone = test_input($_POST["phone"]);
+    // check if order only contains numbers and no whitespaces
+    if (!preg_match("/^[0-9]*$/",$phone)) {
+      $phoneErr = "* Solo números sin espacios permitidos"; 
+    }
+  }
+
+  array_push($errors, $phoneErr);
+
+  if (empty($_POST["email"])) {
+    $emailErr = "* Email requerido";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "* Formato de email incorrecto"; 
+    }
+  }
+
+  array_push($errors, $emailErr);
 
   if (@$_POST['cat'] == "") {
     $makeErr = "* Marca del vehículo requerida";
@@ -185,7 +213,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //Check if all items have an option selected (change number as needed)
   if (!isset($_POST['matrix_1'])) {
     $matrix1Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_1'])<17){
+  } elseif (count($_POST['matrix_1'])<count($list[1])){
     $matrix1Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -194,7 +222,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //Check if all items have an option selected (change number as needed)
   if (!isset($_POST['matrix_2'])) {
     $matrix2Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_2'])<6){
+  } elseif (count($_POST['matrix_2'])<count($list[2])){
     $matrix2Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -202,7 +230,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!isset($_POST['matrix_3'])) {
     $matrix3Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_3'])<3){
+  } elseif (count($_POST['matrix_3'])<count($list[3])){
     $matrix3Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -210,7 +238,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!isset($_POST['matrix_4'])) {
     $matrix4Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_4'])<4){
+  } elseif (count($_POST['matrix_4'])<count($list[4])){
     $matrix4Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -218,7 +246,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!isset($_POST['matrix_5'])) {
     $matrix5Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_5'])<4){
+  } elseif (count($_POST['matrix_5'])<count($list[5])){
     $matrix5Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -226,7 +254,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!isset($_POST['matrix_6'])) {
     $matrix6Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_6'])<9){
+  } elseif (count($_POST['matrix_6'])<count($list[6])){
     $matrix6Err = "* Se debe seleccionar una opción por ítem";
   }
 
@@ -234,11 +262,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!isset($_POST['matrix_7'])) {
     $matrix7Err = "* Se debe seleccionar una opción por ítem";
-  } elseif (count($_POST['matrix_7'])<7){
+  } elseif (count($_POST['matrix_7'])<count($list[7])){
     $matrix7Err = "* Se debe seleccionar una opción por ítem";
   }
 
   array_push($errors, $matrix7Err);
+
+  if (!isset($_POST['matrix_8'])) {
+    $matrix8Err = "* Se debe seleccionar una opción por ítem";
+  } elseif (count($_POST['matrix_8'])<count($list[8])){
+    $matrix8Err = "* Se debe seleccionar una opción por ítem";
+  }
+
+  array_push($errors, $matrix8Err);
+
+  if (!isset($_POST['matrix_9'])) {
+    $matrix9Err = "* Se debe seleccionar una opción por ítem";
+  } elseif (count($_POST['matrix_9'])<count($list[9])){
+    $matrix9Err = "* Se debe seleccionar una opción por ítem";
+  }
+
+  array_push($errors, $matrix9Err);
+
+  if (!isset($_POST['matrix_10'])) {
+    $matrix10Err = "* Se debe seleccionar una opción por ítem";
+  } elseif (count($_POST['matrix_10'])<count($list[10])){
+    $matrix10Err = "* Se debe seleccionar una opción por ítem";
+  }
+
+  array_push($errors, $matrix10Err);
 
   if (empty($_POST["comment1"])) {
       $comment1 = "";
@@ -288,35 +340,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     array_push($errors, $comment4Err);
 
-  if (empty($_POST["nextMileage"])) {
-      $nextMileageErr = "* Próximo kilometraje requerido";
-    } elseif ($_POST["nextMileage"]<$_POST["mileage"]) {
-      $nextMileageErr = "* El valor debe ser superior al kilometraje actual";
-    } else {
-      $nextMileage = test_input($_POST["nextMileage"]);
-      // check if order only contains numbers and no whitespaces
-      if (!preg_match("/^[0-9]*$/",$nextMileage)) {
-        $nextMileageErr = "* Solo números sin espacios permitidos"; 
-      }
-    }
-
-  array_push($errors, $nextMileageErr);
-
   if (!json_decode(@$_POST["output"])){
       $signatureErr = "* Firma del asesor requerida";
     }
 
   array_push($errors, $signatureErr);
-
-  // if (empty($_POST["email"])) {
-  //   $emailErr = "Email is required";
-  // } else {
-  //   $email = test_input($_POST["email"]);
-  //   // check if e-mail address is well-formed
-  //   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  //     $emailErr = "Invalid email format"; 
-  //   }
-  // }
 
   //Data check for search.php file
 

@@ -514,11 +514,11 @@ form.appnitro
 	background: none repeat scroll 0 0 #FBFBFB;
 	padding:6px 0 6px 6px;
 	color:#666666;
-	
+	height: 7em;
 	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
 	font-size:100%;
 	margin:0;
-	width:98%;
+	width:100%;
 }
 
 #main_body select.select
@@ -865,7 +865,7 @@ form.appnitro
 #main_body .matrix td.first_col{
 	text-align: left;
 	/*font-weight: 700;*/
-	font-size: 95%;
+	font-size: 90%;
 	color:#444;
 	font-family: 'Lato', sans-serif;
 }
@@ -2693,4 +2693,10 @@ div.mf_progress_value span{
 	color: #000; 
 	display: block; 
 	border-bottom: 1px solid #000; 
+}
+
+#main_body form li div.count-chars input{
+	text-align: right;
+	width: 25px;
+	height: 20px;
 }

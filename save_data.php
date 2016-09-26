@@ -10,11 +10,13 @@ $errors_array = array_filter($errors);
  	$day = $_POST['day'];
  	$month = $_POST['month'];
  	$year = $_POST['year'];
- 	$ordernumber = mysql_real_escape_string(htmlspecialchars($_POST['ordernumber']));
  	$firstname1 = mysql_real_escape_string(htmlspecialchars($_POST['firstname1']));
  	$lastname1 = mysql_real_escape_string(htmlspecialchars($_POST['lastname1']));
  	$firstname = mysql_real_escape_string(htmlspecialchars($_POST['firstname']));
  	$lastname = mysql_real_escape_string(htmlspecialchars($_POST['lastname']));
+ 	$idnumber = mysql_real_escape_string(htmlspecialchars($_POST['idnumber']));
+ 	$phone = mysql_real_escape_string(htmlspecialchars($_POST['phone']));
+ 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
  	@$make = $_POST['cat'];
  	@$line = $_POST['subcat'];
  	$model = mysql_real_escape_string(htmlspecialchars($_POST['model']));
@@ -27,76 +29,65 @@ $errors_array = array_filter($errors);
  	$firstname = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower($firstname))));
 	$lastname = str_replace('\' ', '\'', ucwords(str_replace('\'', '\' ', strtolower($lastname))));
 
- 	//Matrix 1 information of print_cc.php (instrumentos y equipamento)
- 	@$m1_el1 = $_POST['matrix_1'][1];
- 	@$m1_el2 = $_POST['matrix_1'][2];
-	@$m1_el3 = $_POST['matrix_1'][3];
-	@$m1_el4 = $_POST['matrix_1'][4];
-	@$m1_el5 = $_POST['matrix_1'][5];
-	@$m1_el6 = $_POST['matrix_1'][6];
-	@$m1_el7 = $_POST['matrix_1'][7];
-	@$m1_el8 = $_POST['matrix_1'][8];
-	@$m1_el9 = $_POST['matrix_1'][9];
-	@$m1_el10 = $_POST['matrix_1'][10];
-	@$m1_el11 = $_POST['matrix_1'][11];
-	@$m1_el12 = $_POST['matrix_1'][12];
-	@$m1_el13 = $_POST['matrix_1'][13];
-	@$m1_el14 = $_POST['matrix_1'][14];
-	@$m1_el15 = $_POST['matrix_1'][15];
-	@$m1_el16 = $_POST['matrix_1'][16];
-	@$m1_el17 = $_POST['matrix_1'][17];
+ 	require('lists.php');
+ 	
+ 	foreach ($names as $mat => $name) {
+	 	//Matrix 1 information of print_i.php (Alumbrado exterior)
+	 	for ($i=1; $i <= count($list[1]) ; $i++) {
+	 		@$$matrixNames[$mat][$i] = $_POST['matrix_1'][$i];
+		}
 
-	//Matrix 2 information of print_cc.php (alumbrado exterior)
- 	@$m2_el1 = $_POST['matrix_2'][1];
- 	@$m2_el2 = $_POST['matrix_2'][2];
-	@$m2_el3 = $_POST['matrix_2'][3];
-	@$m2_el4 = $_POST['matrix_2'][4];
-	@$m2_el5 = $_POST['matrix_2'][5];
-	@$m2_el6 = $_POST['matrix_2'][6];
+		//Matrix 2 information of print_i.php (Emisiones audibles)
+	 	for ($j=1; $j <= count($list[2]) ; $j++) {
+	 		@$$matrixNames[$mat][$j] = $_POST['matrix_2'][$j];
+		}
 
-	//Matrix 3 information of print_cc.php (presentación del vehículo)
- 	@$m3_el1 = $_POST['matrix_3'][1];
- 	@$m3_el2 = $_POST['matrix_3'][2];
-	@$m3_el3 = $_POST['matrix_3'][3];
+		//Matrix 3 information of print_i.php (Suspensión)
+	  	for ($k=1; $k <= count($list[3]) ; $k++) {
+	 		@$$matrixNames[$mat][$k] = $_POST['matrix_3'][$k];
+		}
 
-	//Matrix 4 information of print_cc.php (desgaste de las llantas)
- 	@$m4_el1 = $_POST['matrix_4'][1];
- 	@$m4_el2 = $_POST['matrix_4'][2];
-	@$m4_el3 = $_POST['matrix_4'][3];
-	@$m4_el4 = $_POST['matrix_4'][4];
+		//Matrix 4 information of print_i.php (Estabilidad y dirección)
+	  	for ($l=1; $l <= count($list[4]) ; $l++) {
+	 		@$$matrixNames[$mat][$l] = $_POST['matrix_4'][$l];
+		}
 
-	//Matrix 5 information of print_cc.php (presión de las llantas)
- 	@$m5_el1 = $_POST['matrix_5'][1];
- 	@$m5_el2 = $_POST['matrix_5'][2];
-	@$m5_el3 = $_POST['matrix_5'][3];
-	@$m5_el4 = $_POST['matrix_5'][4];
+		//Matrix 5 information of print_i.php (Compartimiento motor)
+	  	for ($m=1; $m <= count($list[5]) ; $m++) {
+	 		@$$matrixNames[$mat][$m] = $_POST['matrix_5'][$m];
+		}
 
-	//Matrix 6 information of print_cc.php (control debajo del capot)
- 	@$m6_el1 = $_POST['matrix_6'][1];
- 	@$m6_el2 = $_POST['matrix_6'][2];
-	@$m6_el3 = $_POST['matrix_6'][3];
-	@$m6_el4 = $_POST['matrix_6'][4];
-	@$m6_el5 = $_POST['matrix_6'][5];
-	@$m6_el6 = $_POST['matrix_6'][6];
-	@$m6_el7 = $_POST['matrix_6'][7];
-	@$m6_el8 = $_POST['matrix_6'][8];
-	@$m6_el9 = $_POST['matrix_6'][9];
+		//Matrix 6 information of print_i.php (Frenos)
+	  	for ($n=1; $n <= count($list[6]) ; $n++) {
+	 		@$$matrixNames[$mat][$n] = $_POST['matrix_6'][$n];
+		}
 
-	//Matrix 7 information of print_cc.php (prueba de ruta)
- 	@$m7_el1 = $_POST['matrix_7'][1];
- 	@$m7_el2 = $_POST['matrix_7'][2];
-	@$m7_el3 = $_POST['matrix_7'][3];
-	@$m7_el4 = $_POST['matrix_7'][4];
-	@$m7_el5 = $_POST['matrix_7'][5];
-	@$m7_el6 = $_POST['matrix_7'][6];
-	@$m7_el7 = $_POST['matrix_7'][7];
+		//Matrix 7 information of print_i.php (Accesorios y equipamento)
+	   	for ($o=1; $o <= count($list[7]) ; $o++) {
+	 		@$$matrixNames[$mat][$o] = $_POST['matrix_7'][$o];
+		}
+
+		//Matrix 8 information of print_i.php (Documentos del vehículo)
+	   	for ($p=1; $p <= count($list[8]) ; $p++) {
+	 		@$$matrixNames[$mat][$p] = $_POST['matrix_8'][$p];
+		}
+
+		//Matrix 9 information of print_i.php (Desgaste de las llantas (%))
+	   	for ($q=1; $q <= count($list[9]) ; $q++) {
+	 		@$$matrixNames[$mat][$q] = $_POST['matrix_9'][$q];
+		}
+
+		//Matrix 10 information of print_i.php (Presión de llantas (psi))
+	   	for ($r=1; $r <= count($list[10]) ; $r++) {
+	 		@$$matrixNames[$mat][$r] = $_POST['matrix_10'][$r];
+		}
+	}
 
 	//Footer information of print_cc.php
 	$comment1 = $_POST['comment1'];
 	$comment2 = $_POST['comment2'];
 	$comment3 = $_POST['comment3'];
 	$comment4 = $_POST['comment4'];
-	$nextMileage = mysql_real_escape_string(htmlspecialchars($_POST['nextMileage']));
 
 	//Comments sanitizing for storing in database properly
 	//1. Make everything lowercase and then make the first letter if the entire string capitalized
@@ -124,14 +115,16 @@ $errors_array = array_filter($errors);
 		echo "<form method=post action='index.php'>";
 	}
 	else{
-		mysql_query("INSERT document SET day='$day', 
+		mysql_query("INSERT document3 SET day='$day', 
 										 month='$month', 
 										 year='$year',
-										 ordernumber='$ordernumber',
 										 firstname1='$firstname1', 
 										 lastname1='$lastname1',
 										 firstname='$firstname', 
-										 lastname='$lastname',  
+										 lastname='$lastname',
+										 idnumber='$idnumber',
+										 phone='$phone',
+										 email='$email',  
 										 make='$make',
 										 type='$line',
 										 model='$model', 
@@ -149,49 +142,53 @@ $errors_array = array_filter($errors);
 										 m1_el10='$m1_el10',
 										 m1_el11='$m1_el11',
 										 m1_el12='$m1_el12',
-										 m1_el13='$m1_el13',
-										 m1_el14='$m1_el14',
-										 m1_el15='$m1_el15',
-										 m1_el16='$m1_el16',
-										 m1_el17='$m1_el17',
 										 m2_el1='$m2_el1',
 										 m2_el2='$m2_el2',	 
-										 m2_el3='$m2_el3',
-										 m2_el4='$m2_el4',
-										 m2_el5='$m2_el5',
-										 m2_el6='$m2_el6',
 										 m3_el1='$m3_el1',
 										 m3_el2='$m3_el2',	 
 										 m3_el3='$m3_el3',
+										 m3_el4='$m3_el4',
 										 m4_el1='$m4_el1',
 										 m4_el2='$m4_el2',	 
 										 m4_el3='$m4_el3',
 										 m4_el4='$m4_el4',
+										 m4_el5='$m4_el5',
+										 m4_el6='$m4_el6',
+										 m4_el7='$m4_el7',
+										 m4_el8='$m4_el8',
+										 m4_el9='$m4_el9',
+										 m4_el10='$m4_el10',
 										 m5_el1='$m5_el1',
 										 m5_el2='$m5_el2',	 
 										 m5_el3='$m5_el3',
 										 m5_el4='$m5_el4',
+										 m5_el5='$m5_el5',
+										 m5_el6='$m5_el6',
 										 m6_el1='$m6_el1',
 										 m6_el2='$m6_el2',	 
 										 m6_el3='$m6_el3',
 										 m6_el4='$m6_el4',
 										 m6_el5='$m6_el5',
-										 m6_el6='$m6_el6',
-										 m6_el7='$m6_el7',
-										 m6_el8='$m6_el8',
-										 m6_el9='$m6_el9',
 										 m7_el1='$m7_el1',
 										 m7_el2='$m7_el2',	 
 										 m7_el3='$m7_el3',
 										 m7_el4='$m7_el4',
-										 m7_el5='$m7_el5',
-										 m7_el6='$m7_el6',
-										 m7_el7='$m7_el7',
+										 m8_el1='$m8_el1',
+										 m8_el2='$m8_el2',
+										 m9_el1='$m9_el1',
+										 m9_el2='$m9_el2',
+										 m9_el3='$m9_el3',
+										 m9_el4='$m9_el4',
+										 m9_el5='$m9_el5',
+										 m10_el1='$m10_el1',
+										 m10_el2='$m10_el2',
+										 m10_el3='$m10_el3',
+										 m10_el4='$m10_el4',
+										 m10_el5='$m10_el5',
 										 comment1='$comment1',
 										 comment2='$comment2',
 										 comment3='$comment3',
 										 comment4='$comment4',
-										 nextMileage='$nextMileage',
 										 signature= '$signature',
 										 sig_hash= '$sig_hash',
 										 ip= '$ip',
@@ -199,7 +196,7 @@ $errors_array = array_filter($errors);
 										 ")
  		or die(mysql_error());
 		
-		header("location: print_cc.php");
+		header("location: print_i.php");
 	}
 }
 // var_dump($errors_array);
