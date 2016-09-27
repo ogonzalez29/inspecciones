@@ -103,8 +103,8 @@ $errors_array = array_filter($errors);
  		}
 
  		if ($mat == 11) {
- 			//Matrix 10 information of print_i.php (Presión de llantas (psi))
-		   	for ($s=1; $s <= count($list[10]) ; $s++) {
+ 			//Matrix 11 information of print_i.php (Otros latonería y pintura)
+		   	for ($s=1; $s <= count($list[11]) ; $s++) {
 		 		@$$matrixNames[$mat][$s] = $_POST['matrix_11'][$s];
 			}
  		}

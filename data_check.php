@@ -70,6 +70,8 @@ $month = $day = $year = $firstname = $lastname = $idnumber = $phone = $email = $
 $search3 ="";
 $search3Err3 = "";
 
+include('lists.php');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if(empty($_POST["month"]) || empty($_POST["day"]) || empty($_POST["year"])){
     $dateErr = "* Fecha requerida";
