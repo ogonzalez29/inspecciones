@@ -178,15 +178,15 @@ require_once 'save_data.php'; //Save input to database
 		<li id="li_2" >
 		<label class="description" for="element_7">Asesor de servicio </label>
 		<span>
-			<input onKeyPress=check_length_5(this.form); onKeyDown=check_length_5(this.form); id="element_7_1" name= "firstname1" class="element text" maxlength="255" size="15" value="<?php echo $firstname1;?>"/>
+			<input onKeyPress=check_length_6(this.form); onKeyDown=check_length_6(this.form); id="element_7_1" name= "firstname1" class="element text" maxlength="255" size="15" value="<?php echo $firstname1;?>"/>
 			<label>Nombre</label>
-			<input size=1 value=9 name=text_num_5 style="display:none; float:right; text-align:right;">
+			<input size=1 value=9 name=text_num_6 style="display:none; float:right; text-align:right;">
 			<span><?php echo $nameErr1;?></span>
 		</span>
 		<span>
-			<input onKeyPress=check_length_6(this.form); onKeyDown=check_length_6(this.form); id="element_7_2" name= "lastname1" class="element text" maxlength="255" size="15" value="<?php echo $lastname1;?>"/>
+			<input onKeyPress=check_length_7(this.form); onKeyDown=check_length_7(this.form); id="element_7_2" name= "lastname1" class="element text" maxlength="255" size="15" value="<?php echo $lastname1;?>"/>
 			<label>Apellido</label>
-			<input size=1 value=11 name=text_num_6 style="display:none; float:right; text-align:right;">
+			<input size=1 value=11 name=text_num_7 style="display:none; float:right; text-align:right;">
 			<span><?php echo $last_nameErr1;?></span>
 		</span> 
 		</li>
@@ -196,15 +196,15 @@ require_once 'save_data.php'; //Save input to database
 		<li id="li_2" >
 		<label class="description" for="element_2">Cliente </label>
 		<span>
-			<input onKeyPress=check_length_7(this.form); onKeyDown=check_length_7(this.form); id="element_2_1" name= "firstname" class="element text" maxlength="255" size="15" value="<?php echo $firstname;?>"/>
+			<input onKeyPress=check_length_8(this.form); onKeyDown=check_length_8(this.form); id="element_2_1" name= "firstname" class="element text" maxlength="255" size="15" value="<?php echo $firstname;?>"/>
 			<label>Nombre(s)</label>
-			<input size=1 value=15 name=text_num_7 style="display:none; float:right; text-align:right;">
+			<input size=1 value=15 name=text_num_8 style="display:none; float:right; text-align:right;">
 			<span><?php echo $nameErr;?></span>
 		</span>
 		<span>
-			<input onKeyPress=check_length_8(this.form); onKeyDown=check_length_8(this.form); id="element_2_2" name= "lastname" class="element text" maxlength="255" size="15" value="<?php echo $lastname;?>"/>
+			<input onKeyPress=check_length_9(this.form); onKeyDown=check_length_9(this.form); id="element_2_2" name= "lastname" class="element text" maxlength="255" size="15" value="<?php echo $lastname;?>"/>
 			<label>Apellido</label>
-			<input size=1 value=11 name=text_num_8 style="display:none; float:right; text-align:right;">
+			<input size=1 value=11 name=text_num_9 style="display:none; float:right; text-align:right;">
 			<span><?php echo $last_nameErr;?></span>
 		</span> 
 		</li>
@@ -225,8 +225,8 @@ require_once 'save_data.php'; //Save input to database
 		<li id="li_9" >
 			<label class="description" for="element_9">Correo electrónico </label>
 			<div>
-				<input onKeyPress=check_length_13(this.form); onKeyDown=check_length_13(this.form); id="element_9" name="email" class="element text medium" type="text" maxlength="255" value="<?php echo $email;?>"/>
-				<input size=1 value=33 name=text_num_13 style="display:none; float:right; text-align:right;"> 
+				<input onKeyPress=check_length_10(this.form); onKeyDown=check_length_10(this.form); id="element_9" name="email" class="element text medium" type="text" maxlength="255" value="<?php echo $email;?>"/>
+				<input size=1 value=33 name=text_num_10 style="display:none; float:right; text-align:right;"> 
 				<span><?php echo $emailErr;?></span>
 			</div> 
 		</li>	
@@ -304,7 +304,7 @@ require_once 'save_data.php'; //Save input to database
 				    	echo "</tr>";
 				   	}
 			}
-			elseif ($mat > 8 && $mat < 10) {	
+			elseif ($mat == 9) {	
 				echo "<li class=matrix>
 				<table>
 					<caption>
@@ -330,7 +330,7 @@ require_once 'save_data.php'; //Save input to database
 				    	echo "</tr>";
 				   	}
 			}
-			else {
+			elseif ($mat == 10) { 
 				echo "<li class=matrix>
 				<table>
 					<caption>
@@ -352,6 +352,32 @@ require_once 'save_data.php'; //Save input to database
 				    		<td class=first_col>$element</td>";
 				    	for ($j=1; $j < 5; $j++) { 
 			            	echo "<td><label style= display:none for=element_3_$j>$loptions2[$j]</label><input id=element$j name=$elNames[$mat][$i] type=radio value=$j /></td>";
+				    	}
+				    	echo "</tr>";
+				   	}
+			}
+			else {
+				echo "<li class=matrix>
+				<table>
+					<caption>
+							$name 
+					</caption>
+				   <thead>
+				    	<tr>
+				        	<th style=width:40% scope=col><span style=display:none>$name</span></th>
+				            <th id=mc_3_2 style=width:15% scope=col>B</th>
+				            <th id=mc_3_3 style=width:15% scope=col>R</th>
+							<th id=mc_3_4 style=width:15% scope=col>M</th>
+							<th id=mc_3_5 style=width:15% scope=col>N/A</th>
+				        </tr>
+				    </thead>
+				    <tbody>";
+				    for ($i=1; $i <= count($list[$mat]) ; $i++) {
+				    	$element = $list[$mat][$i]; 
+				    	echo "<tr class=alt> 
+				    		<td class=first_col>$element</td>";
+				    	for ($j=1; $j < 5; $j++) { 
+			            	echo "<td><label style= display:none for=element_3_$j>$loptions[$j]</label><input id=element$j name=$elNames[$mat][$i] type=radio value=$j /></td>";
 				    	}
 				    	echo "</tr>";
 				   	}

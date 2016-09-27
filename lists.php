@@ -11,7 +11,8 @@ $names= array(
 	'7' => 'Accesorios y equipamento',
 	'8' => 'Documentos del vehículo',
 	'9' => 'Desgaste de las llantas (%)',
-	'10' => 'Presión de llantas (psi)' 
+	'10' => 'Presión de llantas (psi)',
+	'11' => 'Apariencia exterior' 
 	);
 
 //list of options
@@ -40,7 +41,8 @@ $lcomments= array(
 	'1' => 'Inmediato',
 	'2' => 'De ser posible',
 	'3' => 'A prever',
-	'4' => 'Observaciones'
+	'4' => 'Observaciones',
+	'5' => 'Otros latonería y pintura'
 	);
 
 //list of matrices info
@@ -111,14 +113,19 @@ $list = array(
 				'2' => 'Llanta delantera derecha',
 				'3' => 'Llanta trasera izquierda',
 				'4' => 'Llanta trasera derecha',
-				'5' => 'Llanta de repuesto',
+				'5' => 'Llanta de repuesto'
 			),
 	'10' => array(				
 				'1' => 'Llanta delantera izquierda',				
 				'2' => 'Llanta delantera derecha',
 				'3' => 'Llanta trasera izquierda',
 				'4' => 'Llanta trasera derecha',
-				'5' => 'Llanta de repuesto',
+				'5' => 'Llanta de repuesto'
+			),
+	'11' => array(				
+				'1' => 'Pintura',				
+				'2' => 'Latonería',
+				'3' => 'Rines'
 			)
 	);
 
@@ -133,7 +140,9 @@ $elNames = array(
 	'7' => 'matrix_7',
 	'8' => 'matrix_8',
 	'9' => 'matrix_9',
-	'10' => 'matrix_10'
+	'10' => 'matrix_10',
+	'11' => 'matrix_11'
+
 	);
 
 //list of matrices errors names
@@ -147,7 +156,8 @@ $errorNames = array(
 	'7' => @$matrix7Err,
 	'8' => @$matrix8Err,
 	'9' => @$matrix9Err,
-	'10' => @$matrix10Err
+	'10' => @$matrix10Err,
+	'11' => @$matrix11Err
 	);
 
 //list of comments names
@@ -155,7 +165,8 @@ $comNames = array(
 	'1' => 'comment1',
 	'2' => 'comment2',
 	'3' => 'comment3',
-	'4' => 'comment4'
+	'4' => 'comment4',
+	'5' => 'comment5'
 	);
 
 //List of comments variables
@@ -163,7 +174,8 @@ $comVariables = array(
 	'1' => @$comment1,
 	'2' => @$comment2,
 	'3' => @$comment3,
-	'4' => @$comment4
+	'4' => @$comment4,
+	'5' => @$comment5
 	);
 
 //list of comments errors names
@@ -171,7 +183,8 @@ $errorNames1 = array(
 	'1' => @$comment1Err,
 	'2' => @$comment2Err,
 	'3' => @$comment3Err,
-	'4' => @$comment4Err
+	'4' => @$comment4Err,
+	'5' => @$comment5Err
 	);
 
 //list of matrix elements names
@@ -250,6 +263,11 @@ $matrixNames = array(
 				'3' => 'm10_el3',
 				'4' => 'm10_el4',
 				'5' => 'm10_el5'
+		),
+	'11' => array(
+				'1' => 'm11_el1',
+				'2' => 'm11_el2',
+				'3' => 'm11_el3'
 		)
 	);
 

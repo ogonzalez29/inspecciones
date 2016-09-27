@@ -23,11 +23,13 @@ global $matrix7Err;
 global $matrix8Err;
 global $matrix9Err;
 global $matrix10Err;
+global $matrix11Err;
 global $signatureErr;
 global $comment1Err;
 global $comment2Err;
 global $comment3Err;
 global $comment4Err;
+global $comment5Err;
 global $search3Err3;
 
 $errors = array('$dateErr' => "",
@@ -53,14 +55,16 @@ $errors = array('$dateErr' => "",
                 '$matrix8Err' => "",
                 '$matrix9Err' => "",
                 '$matrix10Err' => "",
+                '$matrix11Err' => "",
                 '$signatureErr' =>"",
                 '$comment1Err' =>"",
                 '$comment2Err' =>"",
                 'comment3Err' =>"",
-                'comment4Err'=>"");
+                'comment4Err'=>"",
+                'comment5Err'=>"");
 
 // $orderErr = $nameErr = $last_nameErr = $emailErr = $genderErr = $websiteErr = "";
-$month = $day = $year = $firstname = $lastname = $idnumber = $phone = $email = $make = $model = $license = $mileage = $firstname1 = $lastname1 =  $comment1 = $comment2 = $comment3 = $comment4 = $signature="";
+$month = $day = $year = $firstname = $lastname = $idnumber = $phone = $email = $make = $model = $license = $mileage = $firstname1 = $lastname1 =  $comment1 = $comment2 = $comment3 = $comment4 = $comment5 = $signature="";
 
 //search input text field and error in search.php file
 $search3 ="";
@@ -292,6 +296,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   array_push($errors, $matrix10Err);
 
+    if (!isset($_POST['matrix_11'])) {
+    $matrix11Err = "* Se debe seleccionar una opción por ítem";
+  } elseif (count($_POST['matrix_11'])<count($list[11])){
+    $matrix11Err = "* Se debe seleccionar una opción por ítem";
+  }
+
+  array_push($errors, $matrix11Err);
+
   if (empty($_POST["comment1"])) {
       $comment1 = "";
     } else {
@@ -339,6 +351,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     array_push($errors, $comment4Err);
+
+  if (empty($_POST["comment5"])) {
+      $comment5 = "";
+    } else {
+      $comment5 = test_input($_POST["comment5"]);
+      // check if comment1 only contains numbers, letters and whitespaces
+      if (!preg_match("/^[0-9a-zA-Záéíóúñ,.;:$() ]*$/",$comment5)) {
+        $comment5Err = "* Solo números, letras y espacios permitidos"; 
+      }
+    }
+
+    array_push($errors, $comment5Err);
 
   if (!json_decode(@$_POST["output"])){
       $signatureErr = "* Firma del asesor requerida";
