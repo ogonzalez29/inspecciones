@@ -30,7 +30,7 @@ global $comment2Err;
 global $comment3Err;
 global $comment4Err;
 global $comment5Err;
-global $search3Err3;
+global $search3Err;
 
 $errors = array('$dateErr' => "",
                 '$nameErr' => "", 
@@ -68,7 +68,7 @@ $month = $day = $year = $firstname = $lastname = $idnumber = $phone = $email = $
 
 //search input text field and error in search.php file
 $search3 ="";
-$search3Err3 = "";
+$search3Err = "";
 
 include('lists.php');
 
@@ -374,13 +374,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //Data check for search.php file
 
-  if (empty($_POST['cons'])){
-    $searchErr = "* Ingrese un criterio de búsqueda";
+  if (empty($_POST['cons3'])){
+    $search3Err = "* Ingrese un criterio de búsqueda";
   } else{
-    $search = test_input($_POST['cons']);
+    $search3 = test_input($_POST['cons3']);
     // check if search value only contains numbers, letters or whitespaces
-    if(!preg_match("/^[0-9a-zA-Záéíóúñ ]*$/", $search)){
-      $searchErr = "* Solo números, letras y espacios permitidos";
+    if(!preg_match("/^[0-9a-zA-Záéíóúñ ]*$/", $search3)){
+      $search3Err = "* Solo números, letras y espacios permitidos";
     }
   }
 }

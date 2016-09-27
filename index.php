@@ -44,7 +44,7 @@ require_once 'save_data.php'; //Save input to database
 	<meta http-equiv="cache-control" content="no-cache"> <!-- tells browser not to cache -->
 	<meta http-equiv="expires" content="0"> <!-- says that the cache expires 'now' -->
 	<meta http-equiv="pragma" content="no-cache"> <!-- says not to use cached stuff, if there is any -->
-	<title>Inspección Visual Mecánica</title>
+	<title>Inspección Visual Mecánica y Colisión</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/view.mobile.css" media="all"/>
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -126,14 +126,14 @@ require_once 'save_data.php'; //Save input to database
 <body id="main_body" >
 	<img id="top" src="img/top.png" alt="">
 	<div id="form_container">
-		<h1><a>Inspección Visual Mecánica</a></h1>
+		<h1><a>Inspección Visual Mecánica y Colisión</a></h1>
 			<form name="testform" id="form_1134337" class="appnitro" method="post" action="">
 			<div class="header-image">
 				<a href="http://servitalleres.com" target="_blank"><img src="img/logo.png"></a>
 			</div>
 			<div class="form_description">
-				<h2>Inspección Visual Mecánica</h2>
-				<p>Revisión de 50 puntos de inspección visual mecánica</p>
+				<h2>Inspección Visual Mecánica y Colisión</h2>
+				<p>Revisión de 50 puntos de Inspección Visual Mecánica y Colisión</p>
 			</div>						
 			<ul >
 			<li id="li_2">

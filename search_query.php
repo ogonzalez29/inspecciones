@@ -1,9 +1,8 @@
 <?php
-$construct = "SELECT * FROM document WHERE
-						(id+1000 LIKE '%$search%'
-						OR firstname LIKE '%$search%'
-						OR lastname LIKE '%$search%'
-						OR license LIKE '%$search%'
-						OR ordernumber LIKE '%$search%')"; 
-$run = mysql_query($construct);
+$construct3 = "SELECT * FROM document3 WHERE
+						(id+3000 LIKE '%$search3%'
+						OR firstname LIKE '%$search3%'
+						OR lastname LIKE '%$search3%'
+						OR license LIKE '%$search3%')"; 
+$run3 = mysql_query($construct3);
 ?>

@@ -7,7 +7,7 @@ if (!$_SESSION['logged']) {
 
 include ('info.php'); //Database connection
 
-$search = $_SESSION['cons'];
+$search3 = $_SESSION['cons3'];
 /* vars for export */
 // database record to be exported
 $db_record = 'document';
@@ -20,20 +20,20 @@ $csv_export = '';
 
 // query to get data from database
 require('search_query.php');
-$field = mysql_num_fields($run);
+$field3 = mysql_num_fields($run3);
 
 // create line with field names
-for($i = 0; $i < $field; $i++) {
-  $csv_export.= mysql_field_name($run,$i).';';
+for($i = 0; $i < $field3; $i++) {
+  $csv_export.= mysql_field_name($run3,$i).';';
 }
 // newline (seems to work both on Linux & Windows servers)
 $csv_export.= '
 ';
 // loop through database query and fill export variable
-while($row = mysql_fetch_array($run)) {
+while($row3 = mysql_fetch_array($run3)) {
   // create line with field values
-  for($i = 0; $i < $field; $i++) {
-    $csv_export.= '"'.$row[mysql_field_name($run,$i)].'";';
+  for($i = 0; $i < $field3; $i++) {
+    $csv_export.= '"'.$row3[mysql_field_name($run3,$i)].'";';
   }	
   $csv_export.= '
   ';	
