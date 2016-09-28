@@ -16,7 +16,7 @@ include ('info.php');
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<title>Certificado de Control Calidad</title>
+		<title>Inspección Visual Mecánica y Colisión</title>
 		<link rel="stylesheet" type="text/css" href="css/view1.css"/>
 		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -26,24 +26,24 @@ include ('info.php');
 	<body>
 	<?php
 		//set search variable to find results from database
-		@$search = $_SESSION['cons'];
-		@$doc = $_POST['doc']-1000;
+		@$search3 = $_SESSION['cons3'];
+		@$doc3 = $_POST['doc3']-3000;
 
 		//get last results from database if recently submitted
-		$result = mysql_query("SELECT * FROM document ORDER BY id DESC LIMIT 1")
+		$result3 = mysql_query("SELECT * FROM document3 ORDER BY id DESC LIMIT 1")
 			or die(mysql_error());
 
-		if (!empty($search)) {
-			$result = mysql_query("SELECT * FROM document WHERE id = '$doc'")
+		if (!empty($search3)) {
+			$result3 = mysql_query("SELECT * FROM document3 WHERE id = '$doc3'")
 				or die(mysql_error());
 
 			//If there's no information in database from search query
-			if (mysql_num_rows($result) == 0) {
+			if (mysql_num_rows($result3) == 0) {
 				die('No hay información con ese criterio de búsqueda');
 			}
 		}
 		//loop through results of database query, displaying them in the format
-		while ($row = mysql_fetch_array($result)) {
+		while ($row3 = mysql_fetch_array($result3)) {
 	?>
 	<div class="grid">
 		<div class="row">
@@ -51,79 +51,95 @@ include ('info.php');
 				<div style="padding: 5px 2px 2px 2px;" class="col-12">
 					<img src="img/logo.png" alt="logo servitalleres"/>
 					<div style="float:right; color:red;" class="col-1_1">
-						<h2 style="text-align:right;"><?php echo 'N. '. ($row['id']+1000)?></h2>
+						<h2 style="text-align:right;"><?php echo 'N. '. ($row3['id']+3000)?></h2>
 					</div>
 				</div>
 				<div style="text-align: center;" class="col-12">
-					<h1>CERTIFICADO DE CONTROL CALIDAD</h1>
+					<h1>INSPECCIÓN VISUAL DE MECÁNICA Y COLISIÓN</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row-9">
+			<div class="col-12">
+				<div class="col-08">
+					<h3 style="font-weight: bold">Fecha:</h3>
+				</div>
+				<div class="col-1_1">
+					<h3 style="border-bottom:1px solid black"><?php echo $row3['day']. '/'. $row3['month']. '/'. $row3['year']?></h3>
+				</div>
+				<div class="col-2_3">
+					<h3 style="font-weight: bold">Asesor de Servicio:</h3>
+				</div>
+				<div class="col-2_3">
+					<h3 style="border-bottom:1px solid black"><?php echo $row3['firstname1']. ' '. $row3['lastname1']?></h3>
 				</div>
 			</div>
 		</div>
 		<div class="row-1">
 			<div class="col-12">
 				<div class="col-08">
-					<h3 style="font-weight: bold;">Cliente:</h3>	
+					<h3 style="font-weight: bold;">Cliente:</h3>
 				</div>
-				<div class="col-3">
-					<h3><?php echo $row['firstname']. ' '. $row['lastname']?></h3>
+				<div class="col-2">
+					<h3 style="border-bottom:1px solid black"><?php echo $row3['firstname']. ' '. $row3['lastname']?></h3>
 				</div>
-				<div class="col-07">
-					<h3 style="font-weight: bold;">Marca:</h3>
+				<div class="col-08">
+					<h3 style="font-weight: bold;">Cédula:</h3>
 				</div>
-				<div class="col-1_6">
-					<h3><?php echo $row['make']?></h3>
-				</div>
-				<div class="col-06">
-					<h3 style="font-weight: bold;">Linea:</h3>
-				</div>
-				<div class="col-1_5">
-					<h3><?php echo $row['type']?></h3>
-				</div>
-				<div style="border-left: 1px solid white;" class="col-09">
-					<h3 style="font-weight: bold;">Modelo:</h3>
-				</div>
-				<div style="border-left: 1px solid black; border-right: 1px solid black;"class="col-06">
-					<h3><?php echo $row['model']?></h3>
-				</div>
-				<div class="col-06">
-					<h3 style="font-weight: bold;">Placa:</h3>
+				<div class="col-1_4">
+					<h3 style="border-bottom:1px solid black"><?php echo number_format($row3['idnumber'],0,",",".")?></h3>
 				</div>
 				<div class="col-09">
-					<h3><?php echo $row['license']?></h3>
+					<h3 style="font-weight: bold;">Teléfono:</h3>
+				</div>
+				<div class="col-1_5">
+					<h3 style="border-bottom:1px solid black"><?php echo $row3['phone']?></h3>
+				</div>
+				<div class="col-07">
+					<h3 style="font-weight: bold;">Email:</h3>
+				</div>
+				<div class="col-3_1">
+					<h3 style="border-bottom:1px solid black"><?php echo $row3['email']?></h3>
 				</div>
 			</div>
 		</div>
 		<div class="row-2">
 			<div class="col-12">
-				<div style="border-left: 1px solid white;" class ="col-1_2">
-					<h3 style="font-weight: bold;">Kilometraje:</h3>
+				<div class="col-07">
+					<h3 style="font-weight: bold;">Marca:</h3>
 				</div>
-				<div style="border-left: 1px solid black; border-right: 1px solid black;" class ="col-08">
-					<h3><?php echo number_format($row['mileage'],0,",",".")?></h3>
-				</div>	
-				<div class="col-2_3">
-					<h3 style="font-weight: bold;">Orden de reparación:</h3>
+				<div class="col-1_6">
+					<h3 style="border-bottom:1px solid black"><?php echo $row3['make']?></h3>
 				</div>
-				<div style="border-left: 1px solid black; border-right: 1px solid black;" class="col-06">
-					<h3><?php echo $row['ordernumber']?></h3>
+				<div class="col-08">
+					<h3 style="font-weight: bold;">Linea:</h3>
 				</div>
-				<div class="col-2_2">
-					<h3 style="font-weight: bold;">Asesor de servicio:</h3>	
+				<div class="col-1_5">
+					<h3 style="border-bottom:1px solid black"><?php echo $row3['type']?></h3>
 				</div>
-				<div style="border-left: 1px solid black; border-right: 1px solid black;" class="col-2_3">
-					<h3><?php echo $row['firstname1']. ' '. $row['lastname1']?></h3>
+				<div class="col-09">
+					<h3 style="font-weight: bold;">Modelo:</h3>
 				</div>
 				<div class="col-07">
-					<h3 style="font-weight: bold;">Fecha:</h3>	
+					<h3 style="border-bottom:1px solid black"><?php echo $row3['model']?></h3>
 				</div>
-				<div style="border-left: 1px solid black;" class="col-1_1">
-					<h3><?php echo $row['day']. '/'. $row['month']. '/'. $row['year']?></h3>
+				<div class="col-08">
+					<h3 style="font-weight: bold;">Placa:</h3>
 				</div>
+				<div class="col-08">
+					<h3 style="border-bottom:1px solid black"><?php echo $row3['license']?></h3>
+				</div>
+				<div class ="col-1_5">
+					<h3 style="font-weight: bold;">Kilometraje:</h3>
+				</div>
+				<div class ="col-08">
+					<h3 style="border-bottom:1px solid black"><?php echo number_format($row3['mileage'],0,",",".")?></h3>
+				</div>	
 			</div>
 		</div>
 		<div class="row-3">
 			<div style="text-align: center;" class="col-12">
-				<h2>PUNTOS DE CONTROL</h2>
+				<h2>PUNTOS DE INSPECCIÓN</h2>
 			</div>
 		</div>
 		<div class="row-4">
@@ -658,7 +674,7 @@ include ('info.php');
 		</div>
 		<?php
 		}
-		file_put_contents('printcc.html', ob_get_contents());
+		file_put_contents('printi.html', ob_get_contents());
 		?>
 		<!--	
 		<br><br>
@@ -674,11 +690,11 @@ include ('info.php');
 		</div> -->
 	</div>
 	<div style="margin: 10px 10px;">
-	<?php $doc1 = $doc;?>
+	<?php $doc4 = $doc3;?>
 		<form method="post" action="print_pdf.php">
 			<th width='60' align='center'>
 				<input type="submit" name="pdf" value="Imprimir en PDF">
-				<input type="hidden" name="doc1" value="<?php echo $doc1;?>" >
+				<input type="hidden" name="doc4" value="<?php echo $doc4;?>" >
 			</th>
 		</form>
 	</div>	 
