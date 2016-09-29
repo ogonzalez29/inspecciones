@@ -152,7 +152,7 @@ include ('info.php');
 							if ($mat <= 5) {
 								echo "<table>
 									<thead>
-										<tr style=height:20px>
+										<tr style=height:21px>
 											<th style=width:55% scope=col><span>$name</span></th>
 								            <th  style=width:10% scope=col>B</th>
 											<th  style=width:10% scope=col>R</th>
@@ -194,7 +194,7 @@ include ('info.php');
 							if ($mat == 5) {
 								echo "<table>
 									<thead>
-										<tr style=height:20px>
+										<tr style=height:21px>
 											<th style=width:55% scope=col><span style=display:none>$name</span></th>
 								            <th  style=width:10% scope=col>B</th>
 											<th  style=width:10% scope=col>R</th>
@@ -223,7 +223,7 @@ include ('info.php');
 				   			if ($mat > 5) {
 								echo "<table>
 									<thead>
-										<tr style=height:20px>
+										<tr style=height:21px>
 											<th style=width:55% scope=col><span>$name</span></th>
 								            <th  style=width:10% scope=col>B</th>
 											<th  style=width:10% scope=col>R</th>
