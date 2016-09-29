@@ -7,7 +7,7 @@ if (!$_SESSION['logged']) {
 }
 echo "Bienvenido, ".$_SESSION['username'];
 echo "<br><br>";
-echo "<a href=logout.php>Cerrar Sesión</a>";
+echo "<a href=login.php>Cerrar Sesión</a>";
 echo "<br><br>";
 echo "<a href=index.php>Volver al inicio</a>";
 //
