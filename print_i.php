@@ -220,7 +220,94 @@ include ('info.php');
 								    	echo "</tr>";
 				   					}
 				   			}
-				   			if ($mat > 5) {
+				   			elseif ($mat > 5 && $mat < 9) {
+								echo "<table>
+									<thead>
+										<tr style=height:21px>
+											<th style=width:55% scope=col><span>$name</span></th>
+								            <th  style=width:10% scope=col>B</th>
+											<th  style=width:10% scope=col>R</th>
+											<th  style=width:10% scope=col>M</th>
+											<th  style=width:10% scope=col>N/A</th>
+										</tr>
+									</thead>
+									<tbody>";
+									for ($i=1; $i <= count($list[$mat]) ; $i++) {
+								    	$concept = $list[$mat][$i];
+								    	$matrix = $matrixNames[$mat][$i];
+								    	echo "<tr class=alt>
+								    		<td class=first_col>$concept</td>";
+								    	for ($j=1; $j < 5; $j++) {
+								    		if(isset($row3[$matrix]) && $row3[$matrix]==$j){
+								    			$check[$j] = "checked";
+								    		}
+								    		else {
+								    			$check[$j] = "";
+								    		} 
+							            	echo "<td><label style= display:none for=element_3_$j>$loptions[$j]</label><input id=element$j name=$elNames[$mat][$i] type=radio value=$j $check[$j]/></td>";
+								    	}
+								    	echo "</tr>";
+				   					}
+							}
+							elseif ($mat == 9) {
+								echo "<table>
+									<thead>
+										<tr style=height:21px>
+											<th style=width:55% scope=col><span>$name</span></th>
+								            <th  style=width:10% scope=col>25</th>
+											<th  style=width:10% scope=col>50</th>
+											<th  style=width:10% scope=col>75</th>
+											<th  style=width:10% scope=col>100</th>
+										</tr>
+									</thead>
+									<tbody>";
+									for ($i=1; $i <= count($list[$mat]) ; $i++) {
+								    	$concept = $list[$mat][$i];
+								    	$matrix = $matrixNames[$mat][$i];
+								    	echo "<tr class=alt>
+								    		<td class=first_col>$concept</td>";
+								    	for ($j=1; $j < 5; $j++) {
+								    		if(isset($row3[$matrix]) && $row3[$matrix]==$j){
+								    			$check[$j] = "checked";
+								    		}
+								    		else {
+								    			$check[$j] = "";
+								    		} 
+							            	echo "<td><label style= display:none for=element_3_$j>$loptions[$j]</label><input id=element$j name=$elNames[$mat][$i] type=radio value=$j $check[$j]/></td>";
+								    	}
+								    	echo "</tr>";
+				   					}
+							}
+							elseif ($mat == 10) {
+								echo "<table>
+									<thead>
+										<tr style=height:21px>
+											<th style=width:55% scope=col><span>$name</span></th>
+								            <th  style=width:10% scope=col>30</th>
+											<th  style=width:10% scope=col>32</th>
+											<th  style=width:10% scope=col>34</th>
+											<th  style=width:10% scope=col>36</th>
+										</tr>
+									</thead>
+									<tbody>";
+									for ($i=1; $i <= count($list[$mat]) ; $i++) {
+								    	$concept = $list[$mat][$i];
+								    	$matrix = $matrixNames[$mat][$i];
+								    	echo "<tr class=alt>
+								    		<td class=first_col>$concept</td>";
+								    	for ($j=1; $j < 5; $j++) {
+								    		if(isset($row3[$matrix]) && $row3[$matrix]==$j){
+								    			$check[$j] = "checked";
+								    		}
+								    		else {
+								    			$check[$j] = "";
+								    		} 
+							            	echo "<td><label style= display:none for=element_3_$j>$loptions[$j]</label><input id=element$j name=$elNames[$mat][$i] type=radio value=$j $check[$j]/></td>";
+								    	}
+								    	echo "</tr>";
+				   					}
+							}
+							elseif ($mat > 10){
 								echo "<table>
 									<thead>
 										<tr style=height:21px>
