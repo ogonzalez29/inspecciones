@@ -120,7 +120,7 @@ else{ // Maximum length not reached so update the value of comment2 counter
 //Función para el campo de nombre cliente
 function check_length_8(testform)
 {
-maxLen = 15; // max number of characters allowed
+maxLen = 12; // max number of characters allowed
 if (testform.firstname.value.length >= maxLen) {
 // Alert message if maximum limit is reached. 
 // If required Alert can be removed. 

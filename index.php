@@ -198,7 +198,7 @@ require_once 'save_data.php'; //Save input to database
 		<span>
 			<input onKeyPress=check_length_8(this.form); onKeyDown=check_length_8(this.form); id="element_2_1" name= "firstname" class="element text" maxlength="255" size="15" value="<?php echo $firstname;?>"/>
 			<label>Nombre(s)</label>
-			<input size=1 value=15 name=text_num_8 style="display:none; float:right; text-align:right;">
+			<input size=1 value=12 name=text_num_8 style="display:none; float:right; text-align:right;">
 			<span><?php echo $nameErr;?></span>
 		</span>
 		<span>

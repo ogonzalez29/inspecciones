@@ -80,7 +80,7 @@ include ('info.php');
 				<div class="col-08">
 					<h3 style="font-weight: bold;">Cliente:</h3>
 				</div>
-				<div class="col-2">
+				<div class="col-2_2">
 					<h3 style="border-bottom:1px solid black"><?php echo $row3['firstname']. ' '. $row3['lastname']?></h3>
 				</div>
 				<div class="col-08">
