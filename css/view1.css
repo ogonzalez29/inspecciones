@@ -121,7 +121,9 @@ caption{
     padding-bottom: 10px;
 }
 
-
+.row-6{
+	margin-top: 150px;
+}
 
 .row-7{
 	width: 100%;
@@ -144,6 +146,7 @@ caption{
 	border-top: 1px solid black;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
+	margin-top: 10px;
 }
 
 .row-1 .col-12 .col-08{
