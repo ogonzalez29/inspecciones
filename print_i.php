@@ -145,421 +145,113 @@ include ('info.php');
 		<div class="row-4">
 			<div class="col-12">
 				<div style="float:left;" class="col-6">
-					<table>
-						<caption>
-								Instrumentos y equipamento: 
-						</caption>
-						   <thead>
-						    	<tr>
-						        	<th style="width: 45%" scope="col"><span style="display: none">Instrumentos y equipamento:</span></th>
-						            <th  style="width: 15%" scope="col">B</th>
-									<th  style="width: 15%" scope="col">M</th>
-									<th  style="width: 15%" scope="col">N/A</th>
-						        </tr>
-						    </thead>
-						    <tbody>
-						    	<tr class="alt">
-						        	<td class="first_col">Indicadores y luces de bordo</td>
-						            <td><label style="display: none" >B</label><input name="matrix_1[1]" type="radio" value="1"  <?php if(isset($row['m1_el1']) && $row['m1_el1']=="1") echo "checked";?>></td>
-									<td><label style="display: none" >M</label><input name="matrix_1[1]" type="radio" value="2"  <?php if(isset($row['m1_el1']) && $row['m1_el1']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input name="matrix_1[1]" type="radio" value="3" <?php if(isset($row['m1_el1']) && $row['m1_el1']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt">
-						        	<td class="first_col">Reloj a la hora</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[2]" type="radio" value="1"  <?php if(isset($row['m1_el2']) && $row['m1_el2']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[2]" type="radio" value="2"  <?php if(isset($row['m1_el2']) && $row['m1_el2']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[2]" type="radio" value="3"  <?php if(isset($row['m1_el2']) && $row['m1_el2']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Cocuyos</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[3]" type="radio" value="1"  <?php if(isset($row['m1_el3']) && $row['m1_el3']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[3]" type="radio" value="2"  <?php if(isset($row['m1_el3']) && $row['m1_el3']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[3]" type="radio" value="3"  <?php if(isset($row['m1_el3']) && $row['m1_el3']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Encendido radio (código)</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[4]" type="radio" value="1"  <?php if(isset($row['m1_el4']) && $row['m1_el4']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[4]" type="radio" value="2"  <?php if(isset($row['m1_el4']) && $row['m1_el4']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[4]" type="radio" value="3"  <?php if(isset($row['m1_el4']) && $row['m1_el4']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Ventilación, calefacción, A/A</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[5]" type="radio" value="1"  <?php if(isset($row['m1_el5']) && $row['m1_el5']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[5]" type="radio" value="2"  <?php if(isset($row['m1_el5']) && $row['m1_el5']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[5]" type="radio" value="3"  <?php if(isset($row['m1_el5']) && $row['m1_el5']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Accionamiento y sonido pito</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[6]" type="radio" value="1"  <?php if(isset($row['m1_el6']) && $row['m1_el6']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[6]" type="radio" value="2"  <?php if(isset($row['m1_el6']) && $row['m1_el6']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[6]" type="radio" value="3"  <?php if(isset($row['m1_el6']) && $row['m1_el6']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Limpiabrisas (eficacia)</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[7]" type="radio" value="1"  <?php if(isset($row['m1_el7']) && $row['m1_el7']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[7]" type="radio" value="2"  <?php if(isset($row['m1_el7']) && $row['m1_el7']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[7]" type="radio" value="3"  <?php if(isset($row['m1_el7']) && $row['m1_el7']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Activación alarma</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[8]" type="radio" value="1"  <?php if(isset($row['m1_el8']) && $row['m1_el8']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[8]" type="radio" value="2"  <?php if(isset($row['m1_el8']) && $row['m1_el8']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[8]" type="radio" value="3"  <?php if(isset($row['m1_el8']) && $row['m1_el8']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Espejos retrovisores</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[9]" type="radio" value="1"  <?php if(isset($row['m1_el9']) && $row['m1_el9']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[9]" type="radio" value="2"  <?php if(isset($row['m1_el9']) && $row['m1_el9']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[9]" type="radio" value="3"  <?php if(isset($row['m1_el9']) && $row['m1_el9']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Elevavidrios (programación)</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[10]" type="radio" value="1"  <?php if(isset($row['m1_el10']) && $row['m1_el10']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[10]" type="radio" value="2"  <?php if(isset($row['m1_el10']) && $row['m1_el10']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[10]" type="radio" value="3"  <?php if(isset($row['m1_el10']) && $row['m1_el10']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Bloqueo central (programación)</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[11]" type="radio" value="1"  <?php if(isset($row['m1_el11']) && $row['m1_el11']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[11]" type="radio" value="2"  <?php if(isset($row['m1_el11']) && $row['m1_el11']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[11]" type="radio" value="3"  <?php if(isset($row['m1_el11']) && $row['m1_el11']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Sonido de parlantes</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[12]" type="radio" value="1"  <?php if(isset($row['m1_el12']) && $row['m1_el12']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[12]" type="radio" value="2"  <?php if(isset($row['m1_el12']) && $row['m1_el12']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[12]" type="radio" value="3"  <?php if(isset($row['m1_el12']) && $row['m1_el12']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Activación sensor reverso</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[13]" type="radio" value="1"  <?php if(isset($row['m1_el13']) && $row['m1_el13']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[13]" type="radio" value="2"  <?php if(isset($row['m1_el13']) && $row['m1_el13']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[13]" type="radio" value="3"  <?php if(isset($row['m1_el13']) && $row['m1_el13']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Presencia copa de seguridad</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[14]" type="radio" value="1"  <?php if(isset($row['m1_el14']) && $row['m1_el14']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[14]" type="radio" value="2"  <?php if(isset($row['m1_el14']) && $row['m1_el14']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[14]" type="radio" value="3"  <?php if(isset($row['m1_el14']) && $row['m1_el14']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Presencia documentos vehículo</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[15]" type="radio" value="1"  <?php if(isset($row['m1_el15']) && $row['m1_el15']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[15]" type="radio" value="2"  <?php if(isset($row['m1_el15']) && $row['m1_el15']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[15]" type="radio" value="3"  <?php if(isset($row['m1_el15']) && $row['m1_el15']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Carga y vencimiento extinguidor</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[16]" type="radio" value="1"  <?php if(isset($row['m1_el16']) && $row['m1_el16']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[16]" type="radio" value="2"  <?php if(isset($row['m1_el16']) && $row['m1_el16']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[16]" type="radio" value="3"  <?php if(isset($row['m1_el16']) && $row['m1_el16']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Programación cambio de aceite</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_1[17]" type="radio" value="1"  <?php if(isset($row['m1_el17']) && $row['m1_el17']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_1[17]" type="radio" value="2"  <?php if(isset($row['m1_el17']) && $row['m1_el17']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_1[17]" type="radio" value="3"  <?php if(isset($row['m1_el17']) && $row['m1_el17']=="3") echo "checked";?>/></td>
-						        </tr>
-						    </tbody>
-						</table>
-						<table>
-						<caption>
-								Alumbrado exterior: 
-						</caption>
-						   <thead>
-						    	<tr>
-						        	<th style="width: 45%" scope="col"><span style="display: none">Alumbrado exterior:</span></th>
-						            <th  style="width: 15%" scope="col">B</th>
-									<th  style="width: 15%" scope="col">M</th>
-									<th  style="width: 15%" scope="col">N/A</th>
-						        </tr>
-						    </thead>
-						    <tbody>
-						    	<tr class="alt" >
-						        	<td class="first_col">Luz baja, media y alta</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_2[1]" type="radio" value="1"  <?php if(isset($row['m2_el1']) && $row['m2_el1']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_2[1]" type="radio" value="2"  <?php if(isset($row['m2_el1']) && $row['m2_el1']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_2[1]" type="radio" value="3"  <?php if(isset($row['m2_el1']) && $row['m2_el1']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Direccionales, repetidores</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_2[2]" type="radio" value="1"  <?php if(isset($row['m2_el2']) && $row['m2_el2']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_2[2]" type="radio" value="2"  <?php if(isset($row['m2_el2']) && $row['m2_el2']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_2[2]" type="radio" value="3"  <?php if(isset($row['m2_el2']) && $row['m2_el2']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Stops</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_2[3]" type="radio" value="1"  <?php if(isset($row['m2_el3']) && $row['m2_el3']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_2[3]" type="radio" value="2"  <?php if(isset($row['m2_el3']) && $row['m2_el3']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_2[3]" type="radio" value="3"  <?php if(isset($row['m2_el3']) && $row['m2_el3']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Reversa</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_2[4]" type="radio" value="1"  <?php if(isset($row['m2_el4']) && $row['m2_el4']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_2[4]" type="radio" value="2"  <?php if(isset($row['m2_el4']) && $row['m2_el4']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_2[4]" type="radio" value="3"  <?php if(isset($row['m2_el4']) && $row['m2_el4']=="3") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Guantera, luz techo, baúl</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_2[5]" type="radio" value="1"  <?php if(isset($row['m2_el5']) && $row['m2_el5']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_2[5]" type="radio" value="2"  <?php if(isset($row['m2_el5']) && $row['m2_el5']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_2[5]" type="radio" value="3"  <?php if(isset($row['m2_el5']) && $row['m2_el5']=="3") echo "checked";?>/></td>
-						        </tr><tr class="alt" >
-						        	<td class="first_col">Exploradoras y antiniebla</td>
-						            <td><label style="display: none" >B</label><input  name="matrix_2[6]" type="radio" value="1"  <?php if(isset($row['m2_el6']) && $row['m2_el6']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >M</label><input  name="matrix_2[6]" type="radio" value="2"  <?php if(isset($row['m2_el6']) && $row['m2_el6']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >N/A</label><input  name="matrix_2[6]" type="radio" value="3"  <?php if(isset($row['m2_el6']) && $row['m2_el6']=="3") echo "checked";?>/></td>
-						        </tr>
-						    </tbody>
+					<?php
+						require ('lists.php');
+						$k=0;
+						foreach ($names as $mat => $name) {
+							if ($mat <= 5) {
+								echo "<table>
+									<thead>
+										<tr style=height:20px>
+											<th style=width:55% scope=col><span>$name</span></th>
+								            <th  style=width:10% scope=col>B</th>
+											<th  style=width:10% scope=col>R</th>
+											<th  style=width:10% scope=col>M</th>
+											<th  style=width:10% scope=col>N/A</th>
+										</tr>
+									</thead>
+									<tbody>";
+									for ($i=1; $i <= count($list[$mat]) ; $i++) {
+								    	$concept = $list[$mat][$i];
+								    	$matrix = $matrixNames[$mat][$i];
+								    	echo "<tr class=alt> 
+								    		<td class=first_col>$concept</td>";
+								    	for ($j=1; $j < 5; $j++) {
+								    		if(isset($row3[$matrix]) && $row3[$matrix]==$j){
+								    			$check[$j] = "checked";
+								    		}
+								    		else {
+								    			$check[$j] = "";
+								    		} 
+							            	echo "<td><label style= display:none for=element_3_$j>$loptions[$j]</label><input id=element$j name=$elNames[$mat][$i] type=radio value=$j $check[$j]/></td>";
+								    	}
+								    	echo "</tr>";
+					   					$k++;
+					   					if ($mat==5 && $k==30) {
+									   	 	break;
+									    }
+				   					}
+				   			}
+						}
+						?>
+							</tbody>
 					</table>
-					<table>
-					<caption>
-							Presentación del vehículo: 
-					</caption>
-					   <thead>
-					    	<tr>
-					        	<th style="width: 45%" scope="col"><span style="display: none">Presentación del vehículo:</span></th>
-					            <th  style="width: 15%" scope="col">B</th>
-								<th  style="width: 15%" scope="col">M</th>
-								<th  style="width: 15%" scope="col">N/A</th>
-					        </tr>
-					    </thead>
-					    <tbody>
-					    	<tr class="alt" >
-					        	<td class="first_col">Limpieza carteras, cinturones</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_3[1]" type="radio" value="1"  <?php if(isset($row['m3_el1']) && $row['m3_el1']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_3[1]" type="radio" value="2"  <?php if(isset($row['m3_el1']) && $row['m3_el1']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_3[1]" type="radio" value="3"  <?php if(isset($row['m3_el1']) && $row['m3_el1']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Limpieza millaré y guarnecidos</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_3[2]" type="radio" value="1"  <?php if(isset($row['m3_el2']) && $row['m3_el2']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_3[2]" type="radio" value="2"  <?php if(isset($row['m3_el2']) && $row['m3_el2']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_3[2]" type="radio" value="3"  <?php if(isset($row['m3_el2']) && $row['m3_el2']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Limpieza exterior (chapas, etc)</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_3[3]" type="radio" value="1"  <?php if(isset($row['m3_el3']) && $row['m3_el3']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_3[3]" type="radio" value="2"  <?php if(isset($row['m3_el3']) && $row['m3_el3']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_3[3]" type="radio" value="3"  <?php if(isset($row['m3_el3']) && $row['m3_el3']=="3") echo "checked";?>/></td>
-					        </tr>
-					    </tbody>
-					</table>											
 				</div>
 				<div style="float:right;" class="col-6">
-					<table>
-						<caption>
-								Desgaste de las llantas (%): 
-						</caption>
-						   <thead>
-						    	<tr>
-						        	<th style="width: 30%" scope="col"><span style="display: none">Desgaste de las llantas (%):</span></th>
-						            <th  style="width: 15%" scope="col">25</th>
-									<th  style="width: 15%" scope="col">50</th>
-									<th  style="width: 15%" scope="col">75</th>
-									<th id="mc_3_4" style="width: 15%" scope="col">100</th>
-						        </tr>
-						    </thead>
-						    <tbody>
-						    	<tr class="alt" >
-						        	<td class="first_col">Delantera izquierda</td>
-						            <td><label style="display: none" >25</label><input  name="matrix_4[1]" type="radio" value="1"  <?php if(isset($row['m4_el1']) && $row['m4_el1']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >50</label><input  name="matrix_4[1]" type="radio" value="2"  <?php if(isset($row['m4_el1']) && $row['m4_el1']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >75</label><input  name="matrix_4[1]" type="radio" value="3"  <?php if(isset($row['m4_el1']) && $row['m4_el1']=="3") echo "checked";?>/></td>
-									<td><label style="display: none" >100</label><input  name="matrix_4[1]" type="radio" value="4"  <?php if(isset($row['m4_el1']) && $row['m4_el1']=="4") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Delantera derecha</td>
-						            <td><label style="display: none" >25</label><input  name="matrix_4[2]" type="radio" value="1"  <?php if(isset($row['m4_el2']) && $row['m4_el2']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >50</label><input  name="matrix_4[2]" type="radio" value="2"  <?php if(isset($row['m4_el2']) && $row['m4_el2']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >75</label><input  name="matrix_4[2]" type="radio" value="3"  <?php if(isset($row['m4_el2']) && $row['m4_el2']=="3") echo "checked";?>/></td>
-									<td><label style="display: none" >100</label><input  name="matrix_4[2]" type="radio" value="4"  <?php if(isset($row['m4_el2']) && $row['m4_el2']=="4") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Trasera izquierda</td>
-						            <td><label style="display: none" >25</label><input  name="matrix_4[3]" type="radio" value="1"  <?php if(isset($row['m4_el3']) && $row['m4_el3']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >50</label><input  name="matrix_4[3]" type="radio" value="2"  <?php if(isset($row['m4_el3']) && $row['m4_el3']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >75</label><input  name="matrix_4[3]" type="radio" value="3"  <?php if(isset($row['m4_el3']) && $row['m4_el3']=="3") echo "checked";?>/></td>
-									<td><label style="display: none" >100</label><input  name="matrix_4[3]" type="radio" value="4"  <?php if(isset($row['m4_el3']) && $row['m4_el3']=="4") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Trasera derecha</td>
-						            <td><label style="display: none" >25</label><input  name="matrix_4[4]" type="radio" value="1"  <?php if(isset($row['m4_el4']) && $row['m4_el4']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >50</label><input  name="matrix_4[4]" type="radio" value="2"  <?php if(isset($row['m4_el4']) && $row['m4_el4']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >75</label><input  name="matrix_4[4]" type="radio" value="3"  <?php if(isset($row['m4_el4']) && $row['m4_el4']=="3") echo "checked";?>/></td>
-									<td><label style="display: none" >100</label><input  name="matrix_4[4]" type="radio" value="4"  <?php if(isset($row['m4_el4']) && $row['m4_el4']=="4") echo "checked";?>/></td>
-						        </tr>
-						    </tbody>
-					</table>
-					<table>
-						<caption>
-								Presión de las llantas (psi): 
-						</caption>
-						   <thead>
-						    	<tr>
-						        	<th style="width: 30%" scope="col"><span style="display: none">Presión de las llantas (psi):</span></th>
-						            <th  style="width: 15%" scope="col">30</th>
-									<th  style="width: 15%" scope="col">32</th>
-									<th  style="width: 15%" scope="col">34</th>
-									<th id="mc_3_4" style="width: 15%" scope="col">36</th>
-						        </tr>
-						    </thead>
-						    <tbody>
-						    	<tr class="alt" >
-						        	<td class="first_col">Delantera izquierda</td>
-						            <td><label style="display: none" >30</label><input  name="matrix_5[1]" type="radio" value="1"  <?php if(isset($row['m5_el1']) && $row['m5_el1']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >32</label><input  name="matrix_5[1]" type="radio" value="2"  <?php if(isset($row['m5_el1']) && $row['m5_el1']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >34</label><input  name="matrix_5[1]" type="radio" value="3"  <?php if(isset($row['m5_el1']) && $row['m5_el1']=="3") echo "checked";?>/></td>
-									<td><label style="display: none" >36</label><input  name="matrix_5[1]" type="radio" value="4"  <?php if(isset($row['m5_el1']) && $row['m5_el1']=="4") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Delantera derecha</td>
-						            <td><label style="display: none" >30</label><input  name="matrix_5[2]" type="radio" value="1"  <?php if(isset($row['m5_el2']) && $row['m5_el2']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >32</label><input  name="matrix_5[2]" type="radio" value="2"  <?php if(isset($row['m5_el2']) && $row['m5_el2']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >34</label><input  name="matrix_5[2]" type="radio" value="3"  <?php if(isset($row['m5_el2']) && $row['m5_el2']=="3") echo "checked";?>/></td>
-									<td><label style="display: none" >36</label><input  name="matrix_5[2]" type="radio" value="4"  <?php if(isset($row['m5_el2']) && $row['m5_el2']=="4") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Trasera izquierda</td>
-						            <td><label style="display: none" >30</label><input  name="matrix_5[3]" type="radio" value="1"  <?php if(isset($row['m5_el3']) && $row['m5_el3']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >32</label><input  name="matrix_5[3]" type="radio" value="2"  <?php if(isset($row['m5_el3']) && $row['m5_el3']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >34</label><input  name="matrix_5[3]" type="radio" value="3"  <?php if(isset($row['m5_el3']) && $row['m5_el3']=="3") echo "checked";?>/></td>
-									<td><label style="display: none" >36</label><input  name="matrix_5[3]" type="radio" value="4"  <?php if(isset($row['m5_el3']) && $row['m5_el3']=="4") echo "checked";?>/></td>
-						        </tr>
-						        <tr class="alt" >
-						        	<td class="first_col">Trasera derecha</td>
-						            <td><label style="display: none" >30</label><input  name="matrix_5[4]" type="radio" value="1"  <?php if(isset($row['m5_el4']) && $row['m5_el4']=="1") echo "checked";?>/></td>
-									<td><label style="display: none" >32</label><input  name="matrix_5[4]" type="radio" value="2"  <?php if(isset($row['m5_el4']) && $row['m5_el4']=="2") echo "checked";?>/></td>
-									<td><label style="display: none" >34</label><input  name="matrix_5[4]" type="radio" value="3"  <?php if(isset($row['m5_el4']) && $row['m5_el4']=="3") echo "checked";?>/></td>
-									<td><label style="display: none" >36</label><input  name="matrix_5[4]" type="radio" value="4"  <?php if(isset($row['m5_el4']) && $row['m5_el4']=="4") echo "checked";?>/></td>
-						        </tr>
-						    </tbody>
-					</table>
-					<table>
-					<caption>
-							Control debajo del capot: 
-					</caption>
-					   <thead>
-					    	<tr>
-					        	<th style="width: 55%" scope="col"><span style="display: none">Control debajo del capot:</span></th>
-					            <th  style="width: 12%" scope="col">B</th>
-								<th  style="width: 12%" scope="col">M</th>
-								<th  style="width: 12%" scope="col">N/A</th>
-					        </tr>
-					    </thead>
-					    <tbody>
-					    	<tr class="alt" >
-					        	<td class="first_col">Nivel aceite motor y ajuste filtro</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_6[1]" type="radio" value="1"  <?php if(isset($row['m6_el1']) && $row['m6_el1']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_6[1]" type="radio" value="2"  <?php if(isset($row['m6_el1']) && $row['m6_el1']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_6[1]" type="radio" value="3"  <?php if(isset($row['m6_el1']) && $row['m6_el1']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Nivel líquido de frenos</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_6[2]" type="radio" value="1"  <?php if(isset($row['m6_el2']) && $row['m6_el2']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_6[2]" type="radio" value="2"  <?php if(isset($row['m6_el2']) && $row['m6_el2']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_6[2]" type="radio" value="3"  <?php if(isset($row['m6_el2']) && $row['m6_el2']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Nivel líquido refrigerante</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_6[3]" type="radio" value="1"  <?php if(isset($row['m6_el3']) && $row['m6_el3']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_6[3]" type="radio" value="2"  <?php if(isset($row['m6_el3']) && $row['m6_el3']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_6[3]" type="radio" value="3"  <?php if(isset($row['m6_el3']) && $row['m6_el3']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Nivel aceite de caja</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_6[4]" type="radio" value="1"  <?php if(isset($row['m6_el4']) && $row['m6_el4']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_6[4]" type="radio" value="2"  <?php if(isset($row['m6_el4']) && $row['m6_el4']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_6[4]" type="radio" value="3"  <?php if(isset($row['m6_el4']) && $row['m6_el4']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Nivel hidráulico de dirección</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_6[5]" type="radio" value="1"  <?php if(isset($row['m6_el5']) && $row['m6_el5']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_6[5]" type="radio" value="2"  <?php if(isset($row['m6_el5']) && $row['m6_el5']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_6[5]" type="radio" value="3"  <?php if(isset($row['m6_el5']) && $row['m6_el5']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Agua limpiabrisas del. y tras</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_6[6]" type="radio" value="1"  <?php if(isset($row['m6_el6']) && $row['m6_el6']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_6[6]" type="radio" value="2"  <?php if(isset($row['m6_el6']) && $row['m6_el6']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_6[6]" type="radio" value="3"  <?php if(isset($row['m6_el6']) && $row['m6_el6']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Fijación y ajuste bornes batería</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_6[7]" type="radio" value="1"  <?php if(isset($row['m6_el7']) && $row['m6_el7']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_6[7]" type="radio" value="2"  <?php if(isset($row['m6_el7']) && $row['m6_el7']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_6[7]" type="radio" value="3"  <?php if(isset($row['m6_el7']) && $row['m6_el7']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Presencia de tapas, obturadores</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_6[8]" type="radio" value="1"  <?php if(isset($row['m6_el8']) && $row['m6_el8']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_6[8]" type="radio" value="2"  <?php if(isset($row['m6_el8']) && $row['m6_el8']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_6[8]" type="radio" value="3"  <?php if(isset($row['m6_el8']) && $row['m6_el8']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Presencia del protector motor</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_6[9]" type="radio" value="1"  <?php if(isset($row['m6_el9']) && $row['m6_el9']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_6[9]" type="radio" value="2"  <?php if(isset($row['m6_el9']) && $row['m6_el9']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_6[9]" type="radio" value="3"  <?php if(isset($row['m6_el9']) && $row['m6_el9']=="3") echo "checked";?>/></td>
-					        </tr>
-					    </tbody>
-					</table>
-					<table>
-					<caption style="height:20px;">
-							Prueba de ruta: 
-					</caption>
-					   <thead>
-					    	<tr>
-					        	<th style="width: 55%" scope="col"><span style="display: none">Prueba de ruta:</span></th>
-					            <th  style="width: 12%" scope="col">B</th>
-								<th  style="width: 12%" scope="col">M</th>
-								<th  style="width: 12%" scope="col">N/A</th>
-					        </tr>
-					    </thead>
-					    <tbody>
-					    	<tr class="alt" >
-					        	<td class="first_col">Centrado del timón</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_7[1]" type="radio" value="1"  <?php if(isset($row['m7_el1']) && $row['m7_el1']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_7[1]" type="radio" value="2"  <?php if(isset($row['m7_el1']) && $row['m7_el1']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_7[1]" type="radio" value="3"  <?php if(isset($row['m7_el1']) && $row['m7_el1']=="3") echo "checked";?>/></td>
-						    </tr>
-					    	<tr class="alt" >
-					        	<td class="first_col">Cambio de marchas neutro y andando</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_7[2]" type="radio" value="1"  <?php if(isset($row['m7_el2']) && $row['m7_el2']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_7[2]" type="radio" value="2"  <?php if(isset($row['m7_el2']) && $row['m7_el2']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_7[2]" type="radio" value="3"  <?php if(isset($row['m7_el2']) && $row['m7_el2']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Rendimiento y aceleración</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_7[3]" type="radio" value="1"  <?php if(isset($row['m7_el3']) && $row['m7_el3']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_7[3]" type="radio" value="2"  <?php if(isset($row['m7_el3']) && $row['m7_el3']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_7[3]" type="radio" value="3"  <?php if(isset($row['m7_el3']) && $row['m7_el3']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Temperatura de motor</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_7[4]" type="radio" value="1"  <?php if(isset($row['m7_el4']) && $row['m7_el4']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_7[4]" type="radio" value="2"  <?php if(isset($row['m7_el4']) && $row['m7_el4']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_7[4]" type="radio" value="3"  <?php if(isset($row['m7_el4']) && $row['m7_el4']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Encendido en frío y caliente</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_7[5]" type="radio" value="1"  <?php if(isset($row['m7_el5']) && $row['m7_el5']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_7[5]" type="radio" value="2"  <?php if(isset($row['m7_el5']) && $row['m7_el5']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_7[5]" type="radio" value="3"  <?php if(isset($row['m7_el5']) && $row['m7_el5']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Efectividad y estabilidad frenado</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_7[6]" type="radio" value="1"  <?php if(isset($row['m7_el6']) && $row['m7_el6']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_7[6]" type="radio" value="2"  <?php if(isset($row['m7_el6']) && $row['m7_el6']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_7[6]" type="radio" value="3"  <?php if(isset($row['m7_el6']) && $row['m7_el6']=="3") echo "checked";?>/></td>
-					        </tr>
-					        <tr class="alt" >
-					        	<td class="first_col">Especificación ruidos susp. y dirección</td>
-					            <td><label style="display: none" >B</label><input  name="matrix_7[7]" type="radio" value="1"  <?php if(isset($row['m7_el7']) && $row['m7_el7']=="1") echo "checked";?>/></td>
-								<td><label style="display: none" >M</label><input  name="matrix_7[7]" type="radio" value="2"  <?php if(isset($row['m7_el7']) && $row['m7_el7']=="2") echo "checked";?>/></td>
-								<td><label style="display: none" >N/A</label><input  name="matrix_7[7]" type="radio" value="3"  <?php if(isset($row['m7_el7']) && $row['m7_el7']=="3") echo "checked";?>/></td>
-					        </tr>
-					    </tbody>
+					<?php
+						require ('lists.php');
+						foreach ($names as $mat => $name) {
+							if ($mat == 5) {
+								echo "<table>
+									<thead>
+										<tr style=height:20px>
+											<th style=width:55% scope=col><span style=display:none>$name</span></th>
+								            <th  style=width:10% scope=col>B</th>
+											<th  style=width:10% scope=col>R</th>
+											<th  style=width:10% scope=col>M</th>
+											<th  style=width:10% scope=col>N/A</th>
+										</tr>
+									</thead>
+									<tbody>";
+									for ($i=3; $i <= count($list[$mat]) ; $i++) {
+								    	$concept = $list[$mat][$i];
+								    	$matrix = $matrixNames[$mat][$i];
+								    	echo "<tr class=alt> 
+								    		<td class=first_col>$concept</td>";
+								    	for ($j=1; $j < 5; $j++) {
+								    		if(isset($row3[$matrix]) && $row3[$matrix]==$j){
+								    			$check[$j] = "checked";
+								    		}
+								    		else {
+								    			$check[$j] = "";
+								    		} 
+							            	echo "<td><label style= display:none for=element_3_$j>$loptions[$j]</label><input id=element$j name=$elNames[$mat][$i] type=radio value=$j $check[$j]/></td>";
+								    	}
+								    	echo "</tr>";
+				   					}
+				   			}
+				   			if ($mat > 5) {
+								echo "<table>
+									<thead>
+										<tr style=height:20px>
+											<th style=width:55% scope=col><span>$name</span></th>
+								            <th  style=width:10% scope=col>B</th>
+											<th  style=width:10% scope=col>R</th>
+											<th  style=width:10% scope=col>M</th>
+											<th  style=width:10% scope=col>N/A</th>
+										</tr>
+									</thead>
+									<tbody>";
+									for ($i=1; $i <= count($list[$mat]) ; $i++) {
+								    	$concept = $list[$mat][$i];
+								    	$matrix = $matrixNames[$mat][$i];
+								    	echo "<tr class=alt>
+								    		<td class=first_col>$concept</td>";
+								    	for ($j=1; $j < 5; $j++) {
+								    		if(isset($row3[$matrix]) && $row3[$matrix]==$j){
+								    			$check[$j] = "checked";
+								    		}
+								    		else {
+								    			$check[$j] = "";
+								    		} 
+							            	echo "<td><label style= display:none for=element_3_$j>$loptions[$j]</label><input id=element$j name=$elNames[$mat][$i] type=radio value=$j $check[$j]/></td>";
+								    	}
+								    	echo "</tr>";
+				   					}
+							}
+						}
+						?>
+							</tbody>
 					</table>
 				</div>
 			</div>
@@ -586,90 +278,66 @@ include ('info.php');
 						<h2 style="padding-right: 38px;">Semáforo</h2>
 						<svg>
 							<circle cx="40%" cy="50%" r="50" stroke="red" stroke-width="3" fill="red" />
-							<text x="40%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">Inmediato</text>
+							<text x="40%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em"><?php echo $lcomments[1];?></text>
 						</svg>
 						<svg>
 							<circle cx="40%" cy="50%" r="50" stroke="yellow" stroke-width="3" fill="yellow" />
-							<text x="40%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">De ser posible</text>
+							<text x="40%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em"><?php echo $lcomments[2];?></text>
 						</svg>
 						<svg>
 							<circle cx="40%" cy="50%" r="50" stroke="green" stroke-width="3" fill="green" />
-							<text x="40%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em">A prever</text>
+							<text x="40%" y="50%" text-anchor="middle" stroke="#1A1A1A" stroke-width="0.5px" dy=".3em"><?php echo $lcomments[3];?></text>
 						</svg>
-						<h2 style="padding-right: 30px;">Observaciones:</h2>
+						<h2 style="padding-right: 30px;"><?php echo $lcomments[4].':';?></h2>
+						<h2 style="padding-right: 30px; padding-top: 100px"><?php echo $lcomments[5].':';?></h2>
 
 					</div>
 				</div>
 				<div style="float:right;" class="col-9">
 					<div style="text-align:center" class="col-12">
 						<h2>Comentarios</h2>
-						<div style="border-bottom: 1px solid black;" class="col-12">
-							<h3><?php echo $row['comment1']?></h3>
-						</div>
-						<div style="border-bottom: 1px solid black;" class="col-12">
-							<h3><?php echo $row['comment2']?></h3>
-						</div>
-						<div style="border-bottom: 1px solid black;" class="col-12">
-							<h3><?php echo $row['comment3']?></h3>
-						</div>
-						<div class="col-12">
-							<h3><?php echo $row['comment4']?></h3>
-						</div>
+						<?php
+						require('lists.php');
+						foreach ($lcomments as $com => $value) {
+							$comment= $comNames[$com];
+							$comments= $row3[$comment];
+							echo "<div style='border-bottom:1px solid black' class=col-12>
+								<div id=comments class=col-12>
+									<h3>$comments</h3>
+								</div>
+								</div>";		
+						}
+						?>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="footer">
+			<div style="display:inline-block; width:100%;" id="mf_sigpad_7">
+				<div class="mf_sig_wrapper medium">
+		          <canvas class="mf_canvas_pad" width="309" height="129"></canvas>
+		          <input type="hidden" name="output" id="output" class="output"/>
+		        </div>
+		        <script type="text/javascript">
+					$(function(){
+						var sigpad_options_7 = {
+			               drawOnly : false,
+			               displayOnly: true,
+			               clear: '.element_7_clear',
+			               bgColour: '#fff',
+			               penColour: '#000',
+			               output: '#output',
+			               lineTop: 95,
+			               lineMargin: 10,
+			               validateFields: false
+			        	};
+			        	var sigpad_data_7 = <?php echo $row3['signature']?>;
+			      		$('#mf_sigpad_7').signaturePad(sigpad_options_7).regenerate(sigpad_data_7);
+					});
+				</script>
+			</div>
 			<div class="col-12">
-				<div class="col-6">
-					<div class="col-12">
-						<h2>Conformidad factura / trabajos:</h2>
-					</div>
-					<div style="border-top: 1px solid black; border-bottom: 1px solid black; display:inline-block;" class="col-12">
-						<div style="display:inline-block; width:100%;" id="mf_sigpad_7">
-							<div class="mf_sig_wrapper medium">
-					          <canvas class="mf_canvas_pad" width="309" height="129"></canvas>
-					          <input type="hidden" name="output" id="output" class="output"/>
-					        </div>
-					        <script type="text/javascript">
-								$(function(){
-									var sigpad_options_7 = {
-						               drawOnly : false,
-						               displayOnly: true,
-						               clear: '.element_7_clear',
-						               bgColour: '#fff',
-						               penColour: '#000',
-						               output: '#output',
-						               lineTop: 95,
-						               lineMargin: 10,
-						               validateFields: false
-						        	};
-						        	var sigpad_data_7 = <?php echo $row['signature']?>;
-						      		$('#mf_sigpad_7').signaturePad(sigpad_options_7).regenerate(sigpad_data_7);
-								});
-							</script>
-						</div>
-					</div>
-					<div class="col-12">
-						<h3>Firma y sello del taller</h3>
-					</div>
-				</div>
-				<div style="float:right;" class="col-6">
-					
-						<div style="border-right:1px solid black; float:left;" class="col-8">
-							<h2>Próximo mantenimiento a los:</h2>
-						</div>
-						<div style="float:right;" class="col-4">
-							<h2><?php echo number_format($row['nextMileage'],0,",","."). ' '. "kms"?></h2>
-						</div>
-					
-					<div style="border-top: 1px solid black; display: inline-block;" class="col-12">
-						<h1 style="margin-top: 3px; height: 133px;"></h1>
-					</div>
-					<div class="col-12">
-						<h3>Firma del cliente</h3>
-					</div>
-				</div>
+				<h3>Firma y sello del taller</h3>
 			</div>
 		</div>
 		<?php

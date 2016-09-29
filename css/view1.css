@@ -51,6 +51,7 @@ caption{
 }
 
 .mf_canvas_pad{
+	width: 100%;
 	border-radius: 10px;
 	cursor: url("../js/signaturepad/pen.cur"), crosshair;
   	cursor: url("../js/signaturepad/pen.cur") 16 16, crosshair;
@@ -60,26 +61,18 @@ caption{
   cursor: auto;
 }
 
-.mf_sig_wrapper{
-	margin: 0 10% 0 10%;
-	float: left;
-	width: 309px;
+#mf_sigpad_7{
+	margin-top: 15px;
+	margin-bottom: 5px;
 }
 
 .mf_sig_wrapper {
+	margin: 0 auto;
+	width: 309px;
 	border-radius: 10px;
-	/*border: 1px solid #ccc;*/
-	/*width: 309px;*/
+	border: 1px solid #ccc;
 	padding-bottom: 0px !important;
 	padding: 3px !important;
-	margin: 0 10% 0 10%;
-}
-
-.row,
-.row-1,
-.row-2,
-.footer{
-    display: flex;
 }
 
 .row{
@@ -122,10 +115,20 @@ caption{
 	border: 1px solid black;
 }
 
-.row-4,
+.row-4{
+	width: 100%;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+
+
 .row-7{
 	width: 100%;
     display: inline-block;
+    padding-bottom: 15px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .row-5{
@@ -363,6 +366,10 @@ caption{
 .col-3 .col-12 h2,
 .col-9 .col-12 h2{
 	margin-top: 8px;
+}
+
+.footer{
+	border: 1px solid black;
 }
 
 .footer .col-8{
