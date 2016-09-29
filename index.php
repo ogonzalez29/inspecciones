@@ -226,7 +226,7 @@ require_once 'save_data.php'; //Save input to database
 			<label class="description" for="element_9">Correo electrónico </label>
 			<div>
 				<input onKeyPress=check_length_10(this.form); onKeyDown=check_length_10(this.form); id="element_9" name="email" class="element text medium" type="text" maxlength="255" value="<?php echo $email;?>"/>
-				<input size=1 value=33 name=text_num_10 style="display:none; float:right; text-align:right;"> 
+				<input size=1 value=36 name=text_num_10 style="display:none; float:right; text-align:right;"> 
 				<span><?php echo $emailErr;?></span>
 			</div> 
 		</li>	

@@ -154,7 +154,7 @@ else{ // Maximum length not reached so update the value of comment2 counter
 //Función para el campo de email
 function check_length_10(testform)
 {
-maxLen = 33; // max number of characters allowed
+maxLen = 36; // max number of characters allowed
 if (testform.email.value.length >= maxLen) {
 // Alert message if maximum limit is reached. 
 // If required Alert can be removed. 

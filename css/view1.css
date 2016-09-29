@@ -88,7 +88,7 @@ caption{
 .row-1 .col-12 h3,
 .row-2 .col-12 h3,
 .row-9 .col-12 h3{
-	font-size: 0.9em;
+	font-size: 0.8em;
 	font-weight: 100;
 	width: 100%;
 	text-align: center;
@@ -261,6 +261,11 @@ caption{
 .col-3_1{
 	width: 26.3%;
     display: inline-block;
+}
+
+.col-3_2{
+	width: 29.5%;
+	display: inline-block;
 }
 
 .col-4 {

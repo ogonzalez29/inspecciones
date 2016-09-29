@@ -86,19 +86,19 @@ include ('info.php');
 				<div class="col-08">
 					<h3 style="font-weight: bold;">Cédula:</h3>
 				</div>
-				<div class="col-1_4">
+				<div class="col-1_1">
 					<h3 style="border-bottom:1px solid black"><?php echo number_format($row3['idnumber'],0,",",".")?></h3>
 				</div>
 				<div class="col-09">
 					<h3 style="font-weight: bold;">Teléfono:</h3>
 				</div>
-				<div class="col-1_5">
+				<div class="col-1_1">
 					<h3 style="border-bottom:1px solid black"><?php echo $row3['phone']?></h3>
 				</div>
 				<div class="col-07">
 					<h3 style="font-weight: bold;">Email:</h3>
 				</div>
-				<div class="col-3_1">
+				<div class="col-3_2">
 					<h3 style="border-bottom:1px solid black"><?php echo $row3['email']?></h3>
 				</div>
 			</div>
