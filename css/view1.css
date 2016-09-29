@@ -143,9 +143,7 @@ caption{
 }
 
 .row-8{
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+	border: 1px solid black;
 	margin-top: 10px;
 }
 
