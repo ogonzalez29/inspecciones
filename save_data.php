@@ -229,9 +229,10 @@ $errors_array = array_filter($errors);
 										 created= '$created'
 										 ")
  		or die(mysql_error());
+ 		unset($_SESSION['cons3']);
 		
-		header("location: print_i.php");
+		header("location: print.php");
+
 	}
 }
-// var_dump($errors_array);
 ?>

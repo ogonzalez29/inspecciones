@@ -1,7 +1,9 @@
 <?php
 //Verify if session started, else redirect to login.php
 ob_start();
-session_start();
+if(!isset($_SESSION)) { 
+    session_start(); 
+} 
 if (!$_SESSION['logged']) {
 	header("Location: login.php");
 	exit;
@@ -429,27 +431,20 @@ include ('info.php');
 		}
 		file_put_contents('printi.html', ob_get_contents());
 		?>
-		<!--	
-		<br><br>
-		<a href=index.php>Reiniciar otro certificado</a>
-
-		<br><br> -->
-
-		<!-- <div id="footer">
-					Copyright &copy; 2016 <a href="http://www.servitalleres.com" target="_blank">Servitalleres</a>
-		</div> -->
-		<!-- <div class="mockup-overlay">
-			<img src="img/certificado_control_calidad.png">
-		</div> -->
 	</div>
 	<div style="margin: 10px 10px;">
 	<?php $doc4 = $doc3;?>
-		<form method="post" action="print_pdf.php">
+		<form name="fpdf" id= "fpdf" method="post" action="print_pdf.php">
 			<th width='60' align='center'>
 				<input type="submit" name="pdf" value="Imprimir en PDF">
 				<input type="hidden" name="doc4" value="<?php echo $doc4;?>" >
 			</th>
 		</form>
-	</div>	 
+	</div>
+	<script type="text/javascript">
+				$(document).ready(function(){
+     			$("#fpdf").submit();
+			});
+	</script>	 
 </body>
 </html>
